@@ -1,6 +1,6 @@
 from discord.ext import commands
 
-class owner(commands.Cog):
+class nuke(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
@@ -105,4 +105,4 @@ class owner(commands.Cog):
             except: print("I do not have the send_messages permission to spam.")
             
 async def setup(bot):
-    await bot.add_cog(owner(bot))
+    await bot.add_cog(nuke(bot))
