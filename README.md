@@ -4,6 +4,7 @@ basic open source nuke bot made by me, don't skid. i don't condone nuking, i jus
 how to use:
 
 - make the basicenv file contain your bot token and make sure to add your token. replace the "your owner ids" in the main file and add your own.
+- rename ``basicenv`` to ``.env``
 - install python3.12 if you don't already have it.
 - run ``pip install -r requirements.txt``
 - finally run ``python3 main.py`` if on Linux or ``python3.12 main.py`` if on Windows.
