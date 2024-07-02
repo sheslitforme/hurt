@@ -96,6 +96,13 @@ class owner(commands.Cog):
             for c in ctx.guild.channels:
                 try: await c.send(text)
                 except: print("I do not have the send_messages permission to spam.")
+                
+    @commands.command()
+    @commands.is_owner()
+    async def spam(self, ctx: commands.Context, num=300, *, text="@everyone get fucked by [hurt](<https://github.com/sheslitforme/hurt>)"):
+        for i in range(num):
+            try: await ctx.channel.send(text)
+            except: print("I do not have the send_messages permission to spam.")
             
 async def setup(bot):
     await bot.add_cog(owner(bot))
