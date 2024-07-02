@@ -13,7 +13,7 @@ os.environ["JISHAKU_RETAIN"] = "True"
 
 class harm(commands.Bot):
     def __init__(self) -> None:
-        super().__init__(command_prefix=";", owner_ids="214753146512080907", 
+        super().__init__(command_prefix=";", owner_ids=[214753146512080907], 
                        intents=discord.Intents.all())
 
 bot = harm()
