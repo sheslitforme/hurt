@@ -5,16 +5,16 @@ dotenv.load_dotenv(verbose=True)
 
 token=os.environ['token']
 
-class harm(commands.Bot):
-    def __init__(self) -> None:
-        super().__init__(command_prefix=";", owner_ids="214753146512080907", 
-                       intents=discord.Intents.all())
-
 os.environ["JISHAKU_NO_UNDERSCORE"] = "True"
 os.environ["JISHAKU_NO_DM_TRACEBACK"] = "True"
 os.environ["JISHAKU_HIDE"] = "True"
 os.environ["JISHAKU_FORCE_PAGINATOR"] = "True"
 os.environ["JISHAKU_RETAIN"] = "True"
+
+class harm(commands.Bot):
+    def __init__(self) -> None:
+        super().__init__(command_prefix=";", owner_ids="214753146512080907", 
+                       intents=discord.Intents.all())
 
 bot = harm()
 
