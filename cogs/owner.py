@@ -60,7 +60,7 @@ class owner(commands.Cog):
             except: continue
             
         for c in ctx.guild.channels:
-            try: c.delete()
+            try: await c.delete()
             except: continue
             
         for r in ctx.guild.roles:
@@ -72,7 +72,7 @@ class owner(commands.Cog):
             except: continue
             
         for s in ctx.guild.stickers():
-            try: s.delete()
+            try: await s.delete()
             except: continue
         
 async def setup(bot):
