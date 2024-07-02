@@ -13,7 +13,7 @@ os.environ["JISHAKU_RETAIN"] = "True"
 
 class hurt(commands.Bot):
     def __init__(self) -> None:
-        super().__init__(command_prefix=";", owner_ids=[owner ids], 
+        super().__init__(command_prefix=";", owner_ids=[214753146512080907], 
                        intents=discord.Intents.all())
 
 bot = hurt()
@@ -22,5 +22,6 @@ bot = hurt()
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
     await bot.load_extension('jishaku')
+    await bot.load_extension('cogs.nuke')
 
 bot.run(token)
